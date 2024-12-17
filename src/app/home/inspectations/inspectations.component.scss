@@ -1,0 +1,163 @@
+$primary: #fd4100;
+$primary-hover: #9e2f09;
+$secondary: #ffffff;
+$third: #ffd9cc;
+$fourth: #828282;
+$fifth: #333333;
+$sixth: #ffece6;
+$seventh: #000000;
+
+section {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  margin-top: 50px;
+  gap: 20px;
+  .checkVin {
+    width: 100%;
+    background-color: #272a37;
+    height: 350px;
+    display: flex;
+    flex-direction: column;
+    padding: 40px;
+    border-radius: 12px;
+    align-items: flex-start;
+    h2 {
+      color: $secondary;
+    }
+    span {
+      margin-top: 15px;
+      font-size: 15px;
+      color: #c7c7c7;
+    }
+    .search {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-top: 45px;
+      gap: 15px;
+      input {
+        width: 100%;
+        height: 55px;
+        border: 0;
+        border-radius: 12px;
+        outline: none;
+        padding: 10px 25px;
+        background-color: #53555f;
+        font-weight: bold;
+        font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+          Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue",
+          sans-serif;
+        color: $secondary;
+      }
+      input.ng-invalid.ng-dirty {
+        border: 1px solid rgb(255, 0, 0);
+      }
+      button {
+        max-width: 125px;
+        width: 100%;
+        height: 55px;
+        background-color: $secondary;
+        border-radius: 12px;
+        border: 0;
+        cursor: pointer;
+        transition: 0.3s ease;
+        color: $seventh;
+        font-size: 16px;
+        font-weight: bold;
+        &:hover {
+          background-color: #cacaca;
+        }
+      }
+    }
+    .carInfo {
+      width: 100%;
+      max-height: 200px;
+      overflow-y: scroll;
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+    }
+    p {
+      margin-top: 40px;
+      color: $secondary;
+    }
+  }
+  .checkInspection {
+    width: 100%;
+    height: 350px;
+    background-color: #e3d5c5;
+    display: flex;
+    flex-direction: column;
+    padding: 40px;
+    border-radius: 12px;
+    align-items: flex-start;
+    background-image: url("/carNumberCheck.png");
+    background-repeat: no-repeat;
+    background-position: calc(100% - 20px) calc(100% - 20px);
+    background-size: 300px;
+    h2 {
+      color: #272a37;
+    }
+    span {
+      margin-top: 15px;
+      font-size: 15px;
+      color: #272a37;
+    }
+    .search {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-top: 45px;
+      gap: 15px;
+      input {
+        width: 100%;
+        height: 55px;
+        border: 0;
+        border-radius: 12px;
+        outline: none;
+        padding: 10px 25px;
+        background-color: $secondary;
+        font-weight: bold;
+        font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+          Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue",
+          sans-serif;
+      }
+      button {
+        max-width: 125px;
+        width: 100%;
+        height: 55px;
+        background-color: #272a37;
+        border-radius: 12px;
+        border: 0;
+        cursor: pointer;
+        transition: 0.3s ease;
+        color: $secondary;
+        font-size: 16px;
+        font-weight: bold;
+        &:hover {
+          background-color: #4f546b;
+        }
+      }
+    }
+    p {
+      margin-top: 50px;
+      font-weight: bold;
+      width: 100%;
+      line-height: 30px;
+      span {
+        margin-left: 30px;
+        font-size: 20px;
+        height: 20px;
+        font-weight: bold;
+        img {
+          width: 20px;
+          height: 20px;
+          margin-left: 20px;
+        }
+      }
+    }
+  }
+}

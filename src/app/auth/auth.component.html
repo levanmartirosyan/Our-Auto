@@ -1,17 +1,20 @@
-<div class="authorization">
+<app-authnav></app-authnav>
+
+<div
+  class="authorization"
+  [style.background-image]="
+    authSwitcher === 'authorization'
+      ? 'url(\'cls.jpg\')'
+      : 'url(\'clsback.jpg\')'
+  "
+>
   @switch (authSwitcher) { @case ('authorization') {
   <div class="auth">
     <div class="top">
-      <div class="logo" routerLink="/home">
-        <div>
-          <span>OurAuto</span>
-        </div>
-        <span>.Ge</span>
-      </div>
       <span>ავტორიზაცია</span>
     </div>
     <div class="body">
-      <form>
+      <form [formGroup]="authorization" (ngSubmit)="login()">
         <div>
           <label>E-mail</label>
           <input
@@ -41,47 +44,58 @@
   } @case ('registration') {
   <div class="register">
     <div class="top">
-      <div class="logo" routerLink="/home">
-        <div>
-          <span>OurAuto</span>
-        </div>
-        <span>.Ge</span>
-      </div>
       <span>რეგისტრაცია</span>
     </div>
     <div class="body">
-      <form>
-        <div>
-          <label>სახელი</label>
-          <input type="text" placeholder="სახელი" formControlName="mobileNo" />
-        </div>
-        <div>
-          <label>გვარი</label>
-          <input type="text" placeholder="გვარი" formControlName="mobileNo" />
-        </div>
-        <div>
-          <label>E-mail</label>
-          <input type="email" placeholder="E-mail" formControlName="email" />
-        </div>
-        <div>
-          <label>ტელეფონის ნომერი</label>
-          <input
-            type="text"
-            placeholder="ტელეფონის ნომერი"
-            formControlName="address"
-          />
-        </div>
-        <div>
-          <label>პაროლი</label>
-          <input
-            type="password"
-            placeholder="Password"
-            formControlName="password"
-          />
-        </div>
-        <div>
-          <label>როლი</label>
-          <input type="text" placeholder="როლი" formControlName="address" />
+      <form [formGroup]="registration" (ngSubmit)="register()">
+        <div class="scroll">
+          <div>
+            <label>სახელი</label>
+            <input
+              type="text"
+              placeholder="სახელი"
+              formControlName="firstName"
+            />
+          </div>
+          <div>
+            <label>გვარი</label>
+            <input type="text" placeholder="გვარი" formControlName="lastName" />
+          </div>
+          <div>
+            <label>E-mail</label>
+            <input type="email" placeholder="E-mail" formControlName="email" />
+          </div>
+          <div>
+            <label>ტელეფონის ნომერი</label>
+            <input
+              type="text"
+              placeholder="ტელეფონის ნომერი"
+              formControlName="phoneNumber"
+            />
+          </div>
+          <div>
+            <label>პაროლი</label>
+            <input
+              type="password"
+              placeholder="Password"
+              formControlName="password"
+            />
+          </div>
+          <div>
+            <label>როლი</label>
+            <div class="roleSelect" [class.open]="isSelectOpen">
+              <i class="fa-solid fa-chevron-down"></i>
+              <select
+                formControlName="role"
+                (focus)="isSelectOpen = true"
+                (blur)="isSelectOpen = false"
+              >
+                <option value="" disabled selected>აირჩიე როლი</option>
+                <option value="User">მომხმარებელი</option>
+                <option value="Seller">გამყიდველი</option>
+              </select>
+            </div>
+          </div>
         </div>
         <button type="submit">რეგისტრაცია</button>
       </form>

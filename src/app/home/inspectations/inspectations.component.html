@@ -1,0 +1,56 @@
+<section>
+  <div class="checkVin">
+    <h2>მოძებნე VIN კოდით</h2>
+    <span>სერვისის საშუალებით გაიგებთ ავტომობილის დეტალურ ინფორმაციას</span>
+    <form class="search" [formGroup]="vinNum" (ngSubmit)="checkVin()">
+      <input
+        type="text"
+        placeholder="ჩაწერე VIN კოდი"
+        formControlName="VinCode"
+      />
+
+      <button type="submit">ძებნა</button>
+    </form>
+    @if (vinNumberData) {
+    <p>ავტომობილის ინფორმაცია:</p>
+    @if (vinNumberData.attrs) {
+    <div class="carInfo">
+      <span>მარკა: {{ vinNumberData.attrs.Make }}</span>
+      <span>მოდელი: {{ vinNumberData.attrs.Model }}</span>
+      <span>ძრავი: {{ vinNumberData.attrs.Engine }}</span>
+      <span>წელი: {{ vinNumberData.attrs.Year }}</span>
+    </div>
+    } }
+  </div>
+  <div class="checkInspection">
+    <h2>შეამოწმე ტექ. ინსპექტირება</h2>
+    <span>სერვისის საშუალებით გაიგებთ როდის გიწევთ ტექ. ინსპექტირება</span>
+    <form
+      class="search"
+      [formGroup]="carPlateForm"
+      (ngSubmit)="checkInspection()"
+    >
+      <input
+        type="text"
+        placeholder="ავტომობილის ნომერი"
+        formControlName="carPlate"
+        (input)="formatCarPlate($event)"
+        maxlength="9"
+      />
+      <button type="submit">ძებნა</button>
+    </form>
+    @if (inspectionData) {
+    <p>
+      ტექ. ინსპექტირების თარიღი
+      <span>
+        @if (inspectionData.inspectDate) {
+        <img src="/calendar.png" alt="" />
+        {{ inspectionData.inspectDate | date : "yyyy-MM-dd" }}
+        } @else {
+        {{ inspectionData.errorMessage }}
+        }
+      </span>
+    </p>
+    }
+  </div>
+</section>
