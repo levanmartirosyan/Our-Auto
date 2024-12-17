@@ -1,0 +1,244 @@
+$primary: #fd4100;
+$primary-hover: #9e2f09;
+$secondary: #ffffff;
+$third: #ffd9cc;
+$fourth: #828282;
+$fifth: #333333;
+$sixth: #ffece6;
+$seventh: #000000;
+
+.authorization {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #f5f5f8;
+  .logo {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: $primary;
+    width: 130px;
+    height: 40px;
+    border-radius: 20px;
+    cursor: pointer;
+    div {
+      background-color: $secondary;
+      width: 80px;
+      height: 30px;
+      border-radius: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      span {
+        font-weight: bold;
+        font-size: 21px;
+        color: $seventh;
+      }
+    }
+    span {
+      font-weight: bold;
+      font-size: 21px;
+      color: $secondary;
+    }
+  }
+  .auth {
+    max-width: 450px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    z-index: 1010;
+    animation: slideIn 0.7s ease-out;
+    background-color: $secondary;
+    border-radius: 10px;
+    box-shadow: 0 0 7px 5px rgba($color: $sixth, $alpha: 1);
+    .top {
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: relative;
+      padding: 20px;
+      span {
+        font-size: 20px;
+      }
+      &::after {
+        position: absolute;
+        content: "";
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        border-radius: 5px;
+        width: 90%;
+        height: 1px;
+        background-color: $fourth;
+      }
+    }
+    .body {
+      width: 100%;
+      padding: 0 20px;
+      form {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+        div {
+          width: 100%;
+          display: flex;
+          flex-direction: column;
+          gap: 5px;
+          label {
+            font-size: 15px;
+          }
+          input {
+            width: 100%;
+            height: 45px;
+            background-color: $secondary;
+            border: 1px solid $fourth;
+            outline: none;
+            border-radius: 5px;
+            padding: 10px;
+          }
+          input.ng-invalid.ng-dirty {
+            border: 1px solid rgb(255, 0, 0);
+          }
+        }
+        button {
+          width: 100%;
+          height: 45px;
+          border-radius: 5px;
+          background-color: $primary;
+          color: $secondary;
+          border: 0;
+          transition: 0.3s ease;
+          cursor: pointer;
+          font-weight: bold;
+          font-size: 16px;
+          &:hover {
+            background-color: $primary-hover;
+          }
+        }
+      }
+    }
+    .foot {
+      width: 100%;
+      padding: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      span {
+        font-size: 15px;
+        span {
+          color: $primary;
+          cursor: pointer;
+          transition: 0.3s ease;
+          font-size: 15px;
+          padding-left: 5px;
+          &:hover {
+            color: $primary-hover;
+          }
+        }
+      }
+    }
+  }
+
+  .register {
+    max-width: 450px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    z-index: 1010;
+    animation: slideIn 0.7s ease-out;
+    background-color: $secondary;
+    border-radius: 10px;
+    .top {
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: relative;
+      padding: 20px;
+      span {
+        font-size: 20px;
+      }
+      &::after {
+        position: absolute;
+        content: "";
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        border-radius: 5px;
+        width: 90%;
+        height: 1px;
+        background-color: $fourth;
+      }
+    }
+    .body {
+      width: 100%;
+      padding: 0 20px;
+      form {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+        div {
+          width: 100%;
+          display: flex;
+          flex-direction: column;
+          gap: 5px;
+          label {
+            font-size: 15px;
+          }
+          input {
+            width: 100%;
+            height: 45px;
+            background-color: $secondary;
+            border: 1px solid $fourth;
+            outline: none;
+            border-radius: 5px;
+            padding: 10px;
+          }
+          input.ng-invalid.ng-dirty {
+            border: 1px solid rgb(255, 0, 0);
+          }
+        }
+        button {
+          width: 100%;
+          height: 45px;
+          border-radius: 5px;
+          background-color: $primary;
+          color: $secondary;
+          border: 0;
+          transition: 0.3s ease;
+          cursor: pointer;
+          font-weight: bold;
+          font-size: 16px;
+          &:hover {
+            background-color: $primary-hover;
+          }
+        }
+      }
+    }
+    .foot {
+      width: 100%;
+      padding: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      span {
+        font-size: 15px;
+        color: $primary;
+        cursor: pointer;
+        transition: 0.3s ease;
+        &:hover {
+          color: $primary-hover;
+        }
+      }
+    }
+  }
+}

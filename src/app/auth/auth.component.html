@@ -1,0 +1,95 @@
+<div class="authorization">
+  @switch (authSwitcher) { @case ('authorization') {
+  <div class="auth">
+    <div class="top">
+      <div class="logo" routerLink="/home">
+        <div>
+          <span>OurAuto</span>
+        </div>
+        <span>.Ge</span>
+      </div>
+      <span>ავტორიზაცია</span>
+    </div>
+    <div class="body">
+      <form>
+        <div>
+          <label>E-mail</label>
+          <input
+            type="email"
+            placeholder="შეიყვანე E-mail"
+            formControlName="email"
+          />
+        </div>
+        <div>
+          <label>პაროლი</label>
+          <input
+            type="password"
+            placeholder="შეიყვანე პაროლი"
+            formControlName="password"
+          />
+        </div>
+        <button type="submit">შესვლა</button>
+      </form>
+    </div>
+    <div class="foot">
+      <span
+        >არ გაქ ანგარიში?
+        <span (click)="authSwitcher = 'registration'">რეგისტრაცია</span></span
+      >
+    </div>
+  </div>
+  } @case ('registration') {
+  <div class="register">
+    <div class="top">
+      <div class="logo" routerLink="/home">
+        <div>
+          <span>OurAuto</span>
+        </div>
+        <span>.Ge</span>
+      </div>
+      <span>რეგისტრაცია</span>
+    </div>
+    <div class="body">
+      <form>
+        <div>
+          <label>სახელი</label>
+          <input type="text" placeholder="სახელი" formControlName="mobileNo" />
+        </div>
+        <div>
+          <label>გვარი</label>
+          <input type="text" placeholder="გვარი" formControlName="mobileNo" />
+        </div>
+        <div>
+          <label>E-mail</label>
+          <input type="email" placeholder="E-mail" formControlName="email" />
+        </div>
+        <div>
+          <label>ტელეფონის ნომერი</label>
+          <input
+            type="text"
+            placeholder="ტელეფონის ნომერი"
+            formControlName="address"
+          />
+        </div>
+        <div>
+          <label>პაროლი</label>
+          <input
+            type="password"
+            placeholder="Password"
+            formControlName="password"
+          />
+        </div>
+        <div>
+          <label>როლი</label>
+          <input type="text" placeholder="როლი" formControlName="address" />
+        </div>
+        <button type="submit">რეგისტრაცია</button>
+      </form>
+    </div>
+    <div class="foot">
+      <span (click)="authSwitcher = 'authorization'">უკვე მაქვს ანგარიში</span>
+    </div>
+  </div>
+  } }
+  <div class="overlay"></div>
+</div>

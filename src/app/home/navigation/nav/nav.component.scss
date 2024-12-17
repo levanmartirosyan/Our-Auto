@@ -1,0 +1,144 @@
+$primary: #fd4100;
+$primary-hover: #9e2f09;
+$secondary: #ffffff;
+$third: #ffd9cc;
+$fourth: #828282;
+$fifth: #333333;
+$sixth: #ffece6;
+$seventh: #000000;
+
+nav {
+  width: 100%;
+  height: 80px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background-color: $secondary;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 60px;
+  .logo {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: $primary;
+    width: 130px;
+    height: 40px;
+    border-radius: 20px;
+    cursor: pointer;
+    div {
+      background-color: $secondary;
+      width: 80px;
+      height: 30px;
+      border-radius: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      span {
+        font-weight: bold;
+        font-size: 21px;
+        color: $seventh;
+      }
+    }
+    span {
+      font-weight: bold;
+      font-size: 21px;
+      color: $secondary;
+    }
+  }
+  .menu {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    .search {
+      position: relative;
+      i {
+        position: absolute;
+        left: 15px;
+        top: 50%;
+        transform: translateY(-50%);
+      }
+      input {
+        width: 250px;
+        height: 40px;
+        border: 1px solid #d3d3d3;
+        border-radius: 12px;
+        outline: none;
+        padding-left: 40px;
+        transition: 0.3s ease;
+        &[type="search"]::-webkit-search-cancel-button {
+          -webkit-appearance: none;
+          appearance: none;
+          display: none;
+        }
+        &:hover {
+          border: 1px solid $fourth;
+        }
+        &:focus {
+          border: 1px solid $fourth;
+        }
+      }
+    }
+    .addCar {
+      height: 40px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      background-color: $sixth;
+      border-radius: 12px;
+      width: 120px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      transition: 0.3s ease;
+      div {
+        width: 15px;
+        height: 15px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: $primary;
+        border-radius: 50%;
+        i {
+          color: $secondary;
+          font-size: 11px;
+        }
+      }
+      span {
+        height: 10px;
+        font-size: 14px;
+        font-weight: bold;
+      }
+      &:hover {
+        background-color: $third;
+      }
+    }
+    .auth {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 10px;
+      width: 115px;
+      height: 40px;
+      border: 1px solid #d3d3d3;
+      border-radius: 12px;
+      transition: 0.3s ease;
+      background-color: $secondary;
+      cursor: pointer;
+      img {
+        width: 20px;
+      }
+      span {
+        height: 15px;
+        font-weight: bold;
+      }
+      &:hover {
+        border: 1px solid $fourth;
+        background-color: #f0f0f0;
+      }
+    }
+  }
+}
