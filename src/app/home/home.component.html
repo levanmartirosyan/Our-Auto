@@ -1,5 +1,9 @@
 <app-nav></app-nav>
+@if (tools.showCustomLoader) {
+<app-loader></app-loader>
+}
 <main>
+  <app-vipcars></app-vipcars>
   <app-inspectations></app-inspectations>
   <app-cars></app-cars>
 </main>

@@ -1,0 +1,43 @@
+.loader {
+  width: 100%;
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 80px;
+  .modern-loader {
+    position: relative;
+    width: 100%;
+    height: 5px;
+    background: #f2f2f2;
+    border-radius: 5px;
+    overflow: hidden;
+    box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.1);
+  }
+  .smooth-line {
+    position: absolute;
+    top: 0;
+    left: -40%;
+    width: 40%;
+    height: 100%;
+    background: linear-gradient(
+      90deg,
+      rgba(253, 65, 0, 0) 0%,
+      #fd4100 50%,
+      rgba(253, 65, 0, 0) 100%
+    );
+    border-radius: 5px;
+    animation: smooth-slide 0.8s infinite ease-in-out;
+  }
+}
+
+@keyframes smooth-slide {
+  0% {
+    left: -40%;
+  }
+  50% {
+    left: 60%;
+  }
+  100% {
+    left: 100%;
+  }
+}

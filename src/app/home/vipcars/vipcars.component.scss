@@ -1,0 +1,158 @@
+$primary: #fd4100;
+$primary-hover: #9e2f09;
+$secondary: #ffffff;
+$third: #ffd9cc;
+$fourth: #828282;
+$fifth: #333333;
+$sixth: #ffece6;
+$seventh: #000000;
+
+section {
+  width: 100%;
+  height: 400px;
+  position: relative;
+  .head {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    div {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      .rocket {
+        width: 40px;
+        height: 40px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 12px;
+        background-color: $primary;
+        i {
+          color: $secondary;
+          font-size: 18px;
+        }
+      }
+      button.slide {
+        border: 2px solid $seventh;
+        background-color: $secondary;
+        color: $seventh;
+        cursor: pointer;
+        z-index: 1;
+        width: 35px;
+        height: 35px;
+        border-radius: 50%;
+        font-size: 20px;
+        transition: 0.3s ease;
+      }
+      button.prev {
+        left: -20px;
+      }
+      button.next {
+        right: -20px;
+      }
+      button:hover {
+        transform: scale(1.1);
+      }
+    }
+  }
+  .cars {
+    display: flex;
+    justify-content: flex-start;
+    gap: 30px;
+    overflow-x: auto;
+    padding: 20px;
+    scroll-behavior: smooth;
+    scroll-snap-type: x mandatory;
+    scroll-padding-left: 10px;
+    scroll-padding-right: 10px;
+    scrollbar-width: none;
+    min-width: 100%;
+    border-radius: 10px;
+    .card {
+      max-width: 250px;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 20px;
+      border-radius: 12px;
+      background-color: $secondary;
+      scroll-snap-align: start;
+      cursor: pointer;
+      img {
+        width: 100%;
+        height: 170px;
+        border-radius: 12px 12px 0 0;
+      }
+      .info {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0 15px;
+        position: relative;
+        div {
+          display: flex;
+          flex-direction: column;
+          gap: 15px;
+          span {
+            font-size: 14px;
+          }
+          p {
+            color: $seventh;
+            font-size: 16px;
+            font-family: sans-serif;
+          }
+          i {
+            font-size: 20px;
+            transition: 0.3s ease;
+            cursor: pointer;
+            &:hover {
+              color: $primary;
+            }
+          }
+        }
+        &::after {
+          position: absolute;
+          content: "";
+          bottom: -20px;
+          left: 50%;
+          transform: translateX(-50%);
+          width: 85%;
+          height: 1px;
+          background-color: rgb(224, 224, 224);
+        }
+      }
+      .categories {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 15px;
+        gap: 20px;
+        span {
+          font-size: 14px;
+          background-color: #e7e7e7;
+          border-radius: 12px;
+          width: 100px;
+          height: 30px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 500px) {
+  section {
+    .cars {
+      .card {
+        scroll-snap-align: center;
+        width: 100%;
+      }
+    }
+  }
+}

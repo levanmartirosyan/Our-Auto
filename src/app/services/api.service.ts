@@ -36,4 +36,16 @@ export class ApiService {
   checkVinNumber(body: any) {
     return this.http.post('https://api2.myauto.ge/ka/checkVin', body);
   }
+
+  getVipCars() {
+    return this.http.get(
+      'https://rentcar.stepprojects.ge/api/Car/paginated?pageIndex=101&pageSize=10'
+    );
+  }
+
+  getVipCarsForMyauto() {
+    return this.http.get(
+      'https://api2.myauto.ge/ka/services/quick-main-data/all/get'
+    );
+  }
 }
